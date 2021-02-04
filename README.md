@@ -23,22 +23,24 @@ Para verificar : 'java -version'
 
 ![Entrada](src/images/img.png)
 
-### Entrada 
+### Entrada
+- Mês/Ano    
 ![Entrada](src/images/img_4.png)
+- Média diária  
 ![Entrada](src/images/img_5.png)
 
 ### Saída
-
+ - Média  
 ![Entrada](src/images/img_1.png)
+ - Minima   
 ![Entrada](src/images/img_2.png)
+ - Relatorio   
 ![Entrada](src/images/img_3.png)
 
 ### Possíveis Erros
 
-Java é fortemente típada, entrada inválidas podem causar mal funcionamento do sistema.
-
+- Java é fortemente típada, entrada inválidas podem causar mal funcionamento do sistema.
 ![Entrada](src/images/img_6.png)
-
-Versões diferentes do JDK e/ou JAVA, também podem trazer vários tipos de erros.
+- Versões diferentes do JDK e/ou JAVA, também podem trazer vários tipos de erros.
 
 
