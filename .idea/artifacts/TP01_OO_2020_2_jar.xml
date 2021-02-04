@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TP01-OO-2020.2:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TP01_OO_2020_2_jar</output-path>
+    <root id="archive" name="TP01-OO-2020.2.jar">
+      <element id="module-output" name="TP01-OO-2020.2" />
+    </root>
+  </artifact>
+</component>
