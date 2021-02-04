@@ -2,6 +2,7 @@ package application;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.YearMonth;
+import java.util.Collections;
 
 public class App {
     public static int days(int ano, int mes){
@@ -57,6 +58,7 @@ public class App {
             case 1:
                 System.out.printf("A temperatura média do mês informado é :%.2f", media(dados.getDados()));
                 break;
+            case 2:
         }
 
 
