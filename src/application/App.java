@@ -3,66 +3,67 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.YearMonth;
 import java.util.Collections;
+import java.io.IOException;
+
 
 public class App {
-    public static int days(int ano, int mes){
-        YearMonth yearMonthObject = YearMonth.of(ano,mes);
-        return yearMonthObject.lengthOfMonth();
-    }
-    public static double media(ArrayList<Double> dados){
-        double cont=0;
-        for(int i=0;i < dados.size(); i++){
-           cont+=dados.get(i);
-        }
-        return (cont/dados.size());
-    }
-    public static void menu(){
-        System.out.println("Oque deseja fazer :");
-        System.out.println("1 - Cálculo da temperatura média");
-        System.out.println("2 - Cálculo da temperatura mínima");
-        System.out.println("3 - Cálculo da temperatura máxima");
-        System.out.println("5 - Relatório meteorológico");
-        System.out.println("0 - Sair");
-    }
-    public static void msg (int a){
-        switch (a){
-            case 1:
-                System.out.print("Digite o Mês :");
-                break;
-            case 2:
-                System.out.print("Digite o Ano :");
-                break;
-        }
-    }
+    /**
+     *  Função Main;
+     * @param args
+     */
+
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
-        int mes,ano;
-        menu();
-        int decisao = scan.nextInt();
-        msg(1);
-        mes = scan.nextInt();
-        msg(2);
-        ano = scan.nextInt();
-        int days = days(ano,mes);
-        System.out.printf("Agora digite as médias(temperatura) dos %d dia(s)!\n", days);
-        int cont = 1;
+        Functions aux = new Functions();
+
+        int mes,ano,decisao,days,cont=1;
+        double a,menor=1000, maior=-1000;
+        aux.menu();
+        decisao = scan.nextInt();
+        aux.msg(1,decisao);
+            mes = scan.nextInt();
+        aux.msg(2,decisao);
+            ano = scan.nextInt();
+        //Quantidade de dias(Mês);
+        days = aux.days(ano,mes);
+        System.out.printf("Agora digite as média(s) de temperatura(s) dos %d dia(s)! Ex: 29,7\n", days);
         Data dados = new Data();
         //leitura dias
         while(cont <= days){
-            System.out.printf("dia %d :", cont);
-            dados.setDados(scan.nextDouble());
+            System.out.printf("dia %d : ", cont);
+            a = scan.nextDouble();
+            dados.setDados(a);
+            if(a<menor)menor=a;
+            else if(a>maior)maior=a;
             cont++;
         }
-
+        /**
+         * Saida de dados relativo ao tipo de pesquisa
+         */
         switch (decisao){
             case 1:
-                System.out.printf("A temperatura média do mês informado é :%.2f", media(dados.getDados()));
+                System.out.printf("A temperatura média do mês informado é: %.2f °C", aux.media(dados.getDados()));
                 break;
             case 2:
+                System.out.printf("A temperatura mínima do mês informado é :%.2f °C no(s) dia(s):\n", menor);
+                Calc listDays = aux.minMax(dados.getDados(),menor);
+                aux.printDays(listDays.getDays(),mes, ano);
+                break;
+            case 3:
+                System.out.printf("A temperatura mínima do mês informado é :%.2f °C no(s) dia(s):\n", maior);
+                listDays = aux.minMax(dados.getDados(),maior);
+                aux.printDays(listDays.getDays(),mes, ano);
+                break;
+            case 4:
+                System.out.printf("Média de temperadaturas do dia 1 ao %d ,respectivamente:\n", days);
+                dados.listaDados();
+                System.out.printf("\nMédia de temperadatura do período %d/%d : %.2f °C\n", mes,ano,aux.media(dados.getDados()));
+                System.out.printf("Mínima de temperadatura do período %d/%d : %.1f °C\n", mes,ano,menor);
+                System.out.printf("Máxima de temperadatura do período %d/%d : %.1f °C\n", mes,ano,maior);
+                break;
+            default:
+                System.out.println("Volte Sempre!");
+                break;
         }
-
-
-
-
     }
 }
