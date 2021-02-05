@@ -12,13 +12,14 @@ como; temperatura Media, Minima e Maxima.
 # Executando projeto
 
 ### Ferramentas Necessárias 
+- Windows
 
 [JDK 15.0.2](https://jdk.java.net/15/)
 [JAVA](https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR)
 
-OU
+- Linux
 
-Linha comando linux : 'sudo apt install default-jdk' and 'sudo apt install default-jre'<br/>
+comand-line: 'sudo apt install default-jdk' and 'sudo apt install default-jre'<br/>
 Para verificar : 'java -version'
 
 ### Funções 
