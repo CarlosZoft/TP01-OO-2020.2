@@ -15,8 +15,10 @@ como; temperatura Media, Minima e Maxima.
 
 [JDK 15.0.2](https://jdk.java.net/15/)
 [JAVA](https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR)
+
 OU
-Linha comando linux : 'sudo apt install default-jdk' and 'sudo apt install default-jre'
+
+Linha comando linux : 'sudo apt install default-jdk' and 'sudo apt install default-jre'<br/>
 Para verificar : 'java -version'
 
 ### Funções 
