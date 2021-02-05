@@ -19,7 +19,7 @@ public class Data {
     // Listar dados no console
     public void listaDados() {
         for(int i=0 ;i < dados.size(); i++){
-            if(i != 0)System.out.print(","+ dados.get(i));
+            if(i != 0)System.out.print(", "+ dados.get(i));
             else System.out.print(dados.get(i));
         }
     }
