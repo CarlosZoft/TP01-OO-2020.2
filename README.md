@@ -1,5 +1,8 @@
 # Meteorologia
 
+-----------------------------------
+### Autor
+
 Nome   | Matrícula
 --------- | ------
 Carlos Rafael Vasconcelos de Matos | 180118005
@@ -10,6 +13,8 @@ Projeto feito para fazer consultas simples, a partir de dados que o usuario digi
 como; temperatura Media, Minima e Maxima.
 
 # Executando projeto
+
+---------------------------------------
 
 ### Ferramentas Necessárias 
 - Windows
@@ -26,7 +31,15 @@ Para verificar : 'java -version'
 
 ![Entrada](src/images/img.png)
 
+
+# Testando Funcionamento
+
+-----------------------------------------
+
+## Ações esperadas
+
 ### Entrada
+[Arquivo Teste](src/Test)
 - Mês/Ano    
 ![Entrada](src/images/img_4.png)
 - Média diária  
@@ -40,7 +53,9 @@ Para verificar : 'java -version'
  - Relatorio   
 ![Entrada](src/images/img_3.png)
 
-### Possíveis Erros
+# Possíveis Erros
+
+-------------------------------
 
 - Java é fortemente típada, entrada inválidas podem causar mal funcionamento do sistema.
 ![Entrada](src/images/img_6.png)
