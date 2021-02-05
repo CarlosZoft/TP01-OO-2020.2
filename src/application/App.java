@@ -56,11 +56,12 @@ public class App {
                     aux.printDays(listDays.getDays(), mes, ano);
                     break;
                 case 4:
-                    System.out.printf("Medias de temperadaturas do dia 1 ao %d ,respectivamente:\n", days);
+                    System.out.printf("Medias de temperaturas do dia 1 ao %d ,respectivamente:\n", days);
                     dados.listaDados();
-                    System.out.printf("\nMedia de temperadatura do periodo %d/%d : %.2f °C\n", mes, ano, aux.media(dados.getDados()));
-                    System.out.printf("Minima de temperadatura do periodo %d/%d : %.1f °C\n", mes, ano, menor);
-                    System.out.printf("Maxima de temperadatura do periodo %d/%d : %.1f °C\n", mes, ano, maior);
+                    System.out.printf("\nDados obtidos do periodo %d/%d\n", mes, ano);
+                    System.out.printf("Media : %.2f °C\n", aux.media(dados.getDados()));
+                    System.out.printf("Minima : %.1f °C\n", menor);
+                    System.out.printf("Maxima : %.1f °C\n", maior);
                     break;
                 default:
                     System.out.println("Opcao invalida");
