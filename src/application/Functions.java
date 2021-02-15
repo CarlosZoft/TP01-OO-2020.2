@@ -14,9 +14,9 @@ public class Functions {
      * @param mes : mes de pesquisa;
      * @return quantidade de dias(Mes);
      */
-    public static int days(int ano, int mes){
-        YearMonth yearMonthObject = YearMonth.of(ano,mes);
-        return yearMonthObject.lengthOfMonth();
+    public int days(int ano, int mes){
+        YearMonth a = YearMonth.of(ano,mes);
+        return a.lengthOfMonth();
     }
 
     /**
@@ -24,7 +24,7 @@ public class Functions {
      * @param dados : recebe ArrayList de Médias diárias
      * @return média mensal
      */
-    public static double media(ArrayList<Double> dados){
+    public double media(ArrayList<Double> dados){
         double cont=0;
         for(int i=0;i < dados.size(); i++){
             cont+=dados.get(i);
@@ -35,8 +35,9 @@ public class Functions {
     /**
      * print mensagens para o úsuario;
      */
-    public static void menu(){
-        System.out.println("\nO QUE DESEJA CONSULTAR ?\n");
+    public void menu(int ano, int mes){
+        if(ano==0 && mes==0)System.out.println("\nO QUE DESEJA CONSULTAR ?\n");
+        else System.out.printf("\n----Data Atual %d/%d----\n", mes, ano);
         System.out.println("1 - Calculo da temperatura media");
         System.out.println("2 - Calculo da temperatura minima");
         System.out.println("3 - Calculo da temperatura maxima");
@@ -44,14 +45,14 @@ public class Functions {
         System.out.println("0 - Para consultar outra data/Cancelar");
         System.out.println("____________________________________________________________");
     }
-    public static void msg (int a, int decisao){
+    public void msg (int a, int decisao){
         if(decisao<=0 || decisao > 4)System.exit(0);
         switch (a){
             case 1:
                 System.out.print("Digite o Mes(1-12):");
                 break;
             case 2:
-                System.out.print("Digite o Ano (2077):");
+                System.out.print("Digite o Ano (2011-2020):");
                 break;
             default:
                 break;
@@ -64,7 +65,7 @@ public class Functions {
      * @param maiorMenor : recebe a maior ou menor média diária,
      * @return Arraylist com os dias que foram registradas média iguais
      */
-    public static Calc minMax(ArrayList<Double> dados, double maiorMenor){
+    public Calc minMax(ArrayList<Double> dados, double maiorMenor){
         Calc listDay = new Calc();
         for(int i=0;i < dados.size(); i++){
             if(dados.get(i)==maiorMenor)listDay.setDays(i);
@@ -78,7 +79,7 @@ public class Functions {
      * @param mes : recebe mes de pesquisa,
      * @param ano : recebe ano de pesquisa
      */
-    public static void printDays(ArrayList<Integer> days,int mes, int ano){
+    public void printDays(ArrayList<Integer> days,int mes, int ano){
         for(int i=0; i < days.size() ; i++){
             System.out.printf("%d/%d/%d\n", (days.get(i)+1), mes, ano);
         }
